@@ -30,18 +30,18 @@ class Adapter(private val list :List<Item>) : RecyclerView.Adapter<Adapter.ViewH
         holder.textView1.text = currentItem.text1
         holder.textView2.text = currentItem.text2
 
-        if(position %3 == 0) {
-            holder.textView1.text = "Hip!"
-            holder.textView1.setBackgroundColor(Color.BLUE)
-        }
-        if(position %5 == 0){
-            holder.textView1.text = "Pop!"
-            holder.textView1.setBackgroundColor(Color.YELLOW)
-        }
-        if(position %15 ==0){
-            holder.textView1.text = "HipPop!"
-            holder.textView1.setBackgroundColor(Color.GREEN)
-        }
+//        if(position %3 == 0) {
+//            holder.textView1.text = "Hip!"
+//            holder.textView1.setBackgroundColor(Color.BLUE)
+//        }
+//        if(position %5 == 0){
+//            holder.textView1.text = "Pop!"
+//            holder.textView1.setBackgroundColor(Color.YELLOW)
+//        }
+//        if(position %15 ==0){
+//            holder.textView1.text = "HipPop!"
+//            holder.textView1.setBackgroundColor(Color.GREEN)
+//        }
     }
 
     override fun getItemCount(): Int {
