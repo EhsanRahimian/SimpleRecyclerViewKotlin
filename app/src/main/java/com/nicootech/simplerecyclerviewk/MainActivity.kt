@@ -3,15 +3,16 @@ package com.nicootech.simplerecyclerviewk
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Adapter.OnItemClickListener {
 
     private val list = generateDummyList(500)
-    private val adapter = Adapter(list)
+    private val adapter = Adapter(list,this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +39,13 @@ class MainActivity : AppCompatActivity() {
         val index = Random.nextInt(8)
         list.removeAt(index)
         adapter.notifyItemRemoved(index)
+    }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(this, "item $position clicked", Toast.LENGTH_SHORT).show()
+        val clickedItem:Item  = list[position]
+        clickedItem.text1 = "Clicked"
+        adapter.notifyItemChanged(position)
     }
 
     private fun generateDummyList(size: Int): ArrayList<Item> {
