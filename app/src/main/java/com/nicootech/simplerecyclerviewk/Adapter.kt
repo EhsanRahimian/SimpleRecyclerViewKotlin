@@ -44,7 +44,5 @@ class Adapter(private val list :List<Item>) : RecyclerView.Adapter<Adapter.ViewH
 //        }
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount() = list.size
 }

@@ -10,7 +10,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    private val list = generateDummyList(20)
+    private val list = generateDummyList(500)
     private val adapter = Adapter(list)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val index  = Random.nextInt(8)
         val newItem = Item(
             R.drawable.ic_account,
-            "New item at position",
+            "New item at position $index",
             "Line 2"
         )
         list.add(index,newItem)
